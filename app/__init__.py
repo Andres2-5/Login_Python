@@ -1,11 +1,10 @@
-from flask import Flask
+from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from .config import Config 
 from .mi_blueprint import mi_blueprint
 from app.productos import productos
-import pymysql
-pymysql.install_as_MySQLdb()
+
 from flask_bootstrap import Bootstrap
 
 
@@ -25,3 +24,7 @@ migrate = Migrate(app,
                   db)
 
 from .models import Producto, Cliente, Detalle,Venta
+
+@app.route('/prueba')
+def prueba():
+    return render_template("prueba.html")
