@@ -3,7 +3,9 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from .config import Config 
 from .mi_blueprint import mi_blueprint
+from .blueprint_cliente import blueprint_cliente
 from app.productos import productos
+from app.clientes import clientes
 
 from flask_bootstrap import Bootstrap
 
@@ -17,6 +19,8 @@ bootstrap = Bootstrap(app)
 #registro de blueprints
 app.register_blueprint(mi_blueprint)
 app.register_blueprint(productos)
+app.register_blueprint(blueprint_cliente)
+app.register_blueprint(clientes)
 
 #Crear objetos de SQLAlchemy
 db = SQLAlchemy(app)

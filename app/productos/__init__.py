@@ -5,5 +5,4 @@ productos = Blueprint('productos',
                       url_prefix='/productos',
                       template_folder= 'templates',
                       static_folder='imagenes')
-
 from . import routes
