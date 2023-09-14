@@ -9,6 +9,15 @@
             {{mensaje}}
         </div>
 {%endfor%}
+{% if current_user.is_authenticated %}
+<li>
+    <a href="/auth/logout">Cerrar Sesion</a>
+</li>
+{% else %}
+<li>
+    <a href="/auth/login">Iniciar Sesion</a>
+</li>
+{% endif %}
 
     <h1>Lista de productos</h1>
     <table class="table table-bordered">
